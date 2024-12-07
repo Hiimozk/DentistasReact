@@ -1,0 +1,188 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%; 
+}
+
+
+footer {
+  background-color: #f8f9fa;
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+  border-top: 1px solid #ddd;
+  width: 100%;
+  position: relative;
+}
+
+footer > p {
+  margin: 0;
+  padding-top: 0.7rem;
+}
+
+/* estilos para el formulario */
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 300px;
+  height: auto;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+form input,
+form button {
+  width: 100%; 
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+form button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+/* para los mensajes de exito y error */
+p {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.success-message {
+  color: green;
+}
+
+.error-message {
+  color: red;
+}
+
+/* estilo para el tema claro */
+.light-theme form {
+  background-color: #f9f9f9;
+  color: #000;
+}
+
+.light-theme form input,
+.light-theme form button {
+  background-color: #fff;
+  border-color: #ccc;
+}
+
+.light-theme form button {
+  background-color: #007bff;
+  color: white;
+}
+
+/* estilos para el tema oscuro */
+.dark-theme form {
+  background-color: #343a40;
+  color: #fff;
+}
+
+.dark-theme form input,
+.dark-theme form button {
+  background-color: #495057;
+  border-color: #495057;
+  color: #fff;
+}
+
+.dark-theme form button {
+  background-color: #007bff;
+  color: white;
+}
+
+.dark-theme form input:focus,
+.dark-theme form button:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+
+/* ajustar el contenedor de las cards para mostrar varias columnas */
+.card-grid {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;  /* Usamos grid para organizar las cards */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Varias columnas de mínimo 250px */
+  gap: 20px; /* Espacio entre las cards */
+  padding: 20px;
+  justify-items: center; /* Centra las cards dentro de su columna */
+  margin: 0 auto;
+}
+
+/* estilos para las cards dentro*/
+.card {
+  width: 250px; 
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;  /* Fondo claro por defecto */
+  border: 1px solid #ddd;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/*mediaquerys horribles, mejorar*/
+@media (min-width: 768px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr); 
+  }
+}
+
+@media (max-width: 767px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .card-grid {
+    grid-template-columns: 1fr; 
+  }
+}
+/*mouse card*/
+.card:hover {
+  transform: translateY(-5px); 
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* tema claro para las cards */
+.light-theme .card {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  color: #000;
+}
+
+.light-theme .card:hover {
+  border: 1px solid #007bff;
+}
+
+/* tema oscuro para las cards */
+.dark-theme .card {
+  background-color: #495057;
+  border: 1px solid #343a40;
+  color: #fff;
+}
+
+.dark-theme .card:hover {
+  border: 1px solid #007bff;
+  box-shadow: 0 6px 12px rgba(0, 123, 255, 0.2);
+}
